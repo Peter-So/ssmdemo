@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.peter.ssmdemo.dao.UserMapper">
+	<!-- <select id="findById" parameterType="LONG" resultType="User"> select 
+		* from user where id = #{id} </select> -->
+	<resultMap id="BaseResultMap" type="User">
+		<id column="Id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="birthday" property="birthday" jdbcType="DATE" />
+		<result column="gender" property="gender" jdbcType="INTEGER" />
+		<result column="age" property="age" jdbcType="INTEGER" />
+		<association property="idiosyncrasy" column="idiosyncrasy"
+			select="getIdiosyncrasyById" />
+		<collection property="firends" ofType="User" column="id"
+			select="getFriends">
+		</collection>
+	</resultMap>
+
+	<select id="getIdiosyncrasyById" resultType="Idiosyncrasy"
+		parameterType="Integer">
+		select * from idiosyncrasy where id = #{id};
+	</select>
+
+	<select id="findByName" resultMap="BaseResultMap" parameterType="String">
+		select * from user where nickname = #{nickname};
+	</select>
+
+	<select id="getFriends" resultType="User" parameterType="Integer">
+		select u.* from user u where u.id in ( select fid from friend where mid =
+		#{id} );
+	</select>
+
+	<select id="getUserByPage" resultMap="BaseResultMap">
+		select u.* from user u order by u.id asc limit #{pageNo} , #{pageSize}
+	</select>
+
+	<select id="getPage" resultMap="BaseResultMap">
+		select u.* from user u order by u.id asc
+	</select>
+
+</mapper>
