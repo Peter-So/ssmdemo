@@ -39,7 +39,7 @@
 
 	<!-- 配置Json转换器 -->
 	<bean id="mappingJackson2HttpMessageConverter"
-		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		class="com.peter.ssmdemo.util.MappingJackson27HttpMessageConverter">
 		<property name="supportedMediaTypes">
 			<list>
 				<value>application/json</value>

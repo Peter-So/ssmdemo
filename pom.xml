@@ -10,7 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Spring版本 -->
-		<spring.version>4.1.7.RELEASE</spring.version>
+		<spring.version>4.2.4.RELEASE</spring.version>
 		<!-- 编译jdk版本 -->
 		<jdk.version>1.7</jdk.version>
 		<!-- Mybatis 通用Mapper -->
@@ -76,17 +76,6 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.6</version>
 		</dependency>
-		<!--spring-json依赖-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.6.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.6.0</version>
-        </dependency>
         
         <!-- SECURITY begin -->
 		<dependency>
@@ -194,12 +183,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.6.0</version>
+            <version>2.7.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.6.0</version>
+            <version>2.7.0</version>
         </dependency>
 
 		<!-- 将Java的任意Object(含Collection、Map、Date或Enum)转化为JSON人能识别对象 -->
